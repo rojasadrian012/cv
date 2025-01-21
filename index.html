@@ -27,16 +27,16 @@
         --space-64: calc(var(--space-base) * 16);
 
         /* colors */
-        --primary-50: #e9eaeb;
-        --primary-100: #b9bfc1;
-        --primary-200: #989fa3;
-        --primary-300: #68747a;
-        --primary-400: #4b5960;
-        --primary-500: #1e2f38;
-        --primary-600: #1b2b33;
-        --primary-700: #152128;
-        --primary-800: #111a1f;
-        --primary-900: #0d1418;
+        --primary-50: #eaf3f3;
+        --primary-100: #bcd9db;
+        --primary-200: #9cc7ca;
+        --primary-300: #6faeb1;
+        --primary-400: #539ea2;
+        --primary-500: #28868b;
+        --primary-600: #247a7e;
+        --primary-700: #1c5f63;
+        --primary-800: #164a4c;
+        --primary-900: #11383a;
 
         /* text */
         --light-light-50: #fefefe;
@@ -715,75 +715,140 @@
           padding-top: 215px;
         }
       }
+
+      .carousel-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0,5rem 0;
+        height: 255px;
+      }
+
+      .carousel-container div img {
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.3s ease-in-out;
+        max-height: 250px;
+      }
+
+      .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        box-sizing: border-box;
+      }
+
+      .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        font-weight: bold;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.25);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .prev {
+        left: 0;
+      }
+
+      .next {
+        right: 0;
+      }
+
+      .prev:hover, .next:hover {
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      @media screen and (max-width: 767px) {
+        .carousel-container {
+          height: 180px;
+        }
+
+        .carousel-container div img {
+          max-height: 180px;
+        }
+      }
+
     </style>
   </head>
   <body>
-      <div class="background"></div>
+    <div class="background"></div>
 <header class="container header">
-            <div class="header__text">
-        <h1 class="header__title">
-            Adrian<br />
-            <span>Portillo Rojas</span>
-        </h1>
-        <p class="header__subtitle">
-            Licenciado en Análisis de Sistemas
-        </p>
-    </div>
+          <div class="header__text">
+      <h1 class="header__title">
+          Adrian<br />
+          <span>Portillo Rojas</span>
+      </h1>
+      <p class="header__subtitle">
+          Licenciado en Análisis de Sistemas
+      </p>
+  </div>
 
-      </header>
-      <main class="container main">
-    <div class="column column-left"></div>
-    <div class="column column-right"></div>
-            <section class="section links">
-        <h2 class="title">Mis enlaces</h2>
-        <div class="links__container">
-                <a class="links__item" href=https://www.linkedin.com/in/adrian-portillo-52a963245/ target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                         <path
-                            d="M14 1H1.99687C1.44687 1 1 1.45313 1 2.00938V13.9906C1 14.5469 1.44687 15 1.99687 15H14C14.55 15 15 14.5469 15 13.9906V2.00938C15 1.45313 14.55 1 14 1ZM5.23125 13H3.15625V6.31875H5.23438V13H5.23125ZM4.19375 5.40625C3.52812 5.40625 2.99063 4.86562 2.99063 4.20312C2.99063 3.54063 3.52812 3 4.19375 3C4.85625 3 5.39687 3.54063 5.39687 4.20312C5.39687 4.86875 4.85938 5.40625 4.19375 5.40625ZM13.0094 13H10.9344V9.75C10.9344 8.975 10.9187 7.97813 9.85625 7.97813C8.775 7.97813 8.60938 8.82188 8.60938 9.69375V13H6.53438V6.31875H8.525V7.23125H8.55312C8.83125 6.70625 9.50938 6.15312 10.5188 6.15312C12.6187 6.15312 13.0094 7.5375 13.0094 9.3375V13Z"
-                            fill="var(--primary-500)" />
-                    </svg>
-                <span>https://www.linkedin.com/in/adrian-portillo-52a963245/</span></a>
-                <a class="links__item" href=https://github.com/rojasadrian012 target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path
-                            d="M13.5 1H2.5C1.67188 1 1 1.67188 1 2.5V13.5C1 14.3281 1.67188 15 2.5 15H13.5C14.3281 15 15 14.3281 15 13.5V2.5C15 1.67188 14.3281 1 13.5 1ZM9.66562 12.9906C9.40312 13.0375 9.30625 12.875 9.30625 12.7406C9.30625 12.5719 9.3125 11.7094 9.3125 11.0125C9.3125 10.525 9.15 10.2156 8.95937 10.0531C10.1156 9.925 11.3344 9.76562 11.3344 7.76875C11.3344 7.2 11.1313 6.91563 10.8 6.55C10.8531 6.41563 11.0312 5.8625 10.7469 5.14375C10.3125 5.00938 9.31875 5.70312 9.31875 5.70312C8.90625 5.5875 8.45938 5.52812 8.01875 5.52812C7.57812 5.52812 7.13125 5.5875 6.71875 5.70312C6.71875 5.70312 5.725 5.00938 5.29063 5.14375C5.00625 5.85938 5.18125 6.4125 5.2375 6.55C4.90625 6.91563 4.75 7.2 4.75 7.76875C4.75 9.75625 5.91563 9.925 7.07188 10.0531C6.92188 10.1875 6.7875 10.4187 6.74062 10.75C6.44375 10.8844 5.68437 11.1156 5.23125 10.3156C4.94687 9.82188 4.43438 9.78125 4.43438 9.78125C3.92812 9.775 4.4 10.1 4.4 10.1C4.7375 10.2563 4.975 10.8562 4.975 10.8562C5.27812 11.7844 6.72813 11.4719 6.72813 11.4719C6.72813 11.9062 6.73438 12.6125 6.73438 12.7406C6.73438 12.875 6.64062 13.0375 6.375 12.9906C4.3125 12.3 2.86875 10.3375 2.86875 8.04375C2.86875 5.175 5.0625 2.99688 7.93125 2.99688C10.8 2.99688 13.125 5.175 13.125 8.04375C13.1281 10.3375 11.7281 12.3031 9.66562 12.9906ZM6.6 11.0813C6.54063 11.0938 6.48438 11.0687 6.47813 11.0281C6.47188 10.9812 6.5125 10.9406 6.57188 10.9281C6.63125 10.9219 6.6875 10.9469 6.69375 10.9875C6.70312 11.0281 6.6625 11.0688 6.6 11.0813ZM6.30312 11.0531C6.30312 11.0938 6.25625 11.1281 6.19375 11.1281C6.125 11.1344 6.07812 11.1 6.07812 11.0531C6.07812 11.0125 6.125 10.9781 6.1875 10.9781C6.24687 10.9719 6.30312 11.0063 6.30312 11.0531ZM5.875 11.0188C5.8625 11.0594 5.8 11.0781 5.74687 11.0594C5.6875 11.0469 5.64688 11 5.65938 10.9594C5.67188 10.9188 5.73438 10.9 5.7875 10.9125C5.85 10.9313 5.89062 10.9781 5.875 11.0188ZM5.49062 10.85C5.4625 10.8844 5.40312 10.8781 5.35625 10.8313C5.30937 10.7906 5.29688 10.7312 5.32812 10.7031C5.35625 10.6687 5.41563 10.675 5.4625 10.7219C5.50313 10.7625 5.51875 10.825 5.49062 10.85ZM5.20625 10.5656C5.17813 10.5844 5.125 10.5656 5.09062 10.5188C5.05625 10.4719 5.05625 10.4188 5.09062 10.3969C5.125 10.3688 5.17813 10.3906 5.20625 10.4375C5.24063 10.4844 5.24063 10.5406 5.20625 10.5656ZM5.00313 10.2625C4.975 10.2906 4.92812 10.275 4.89375 10.2437C4.85938 10.2031 4.85312 10.1562 4.88125 10.1344C4.90937 10.1062 4.95625 10.1219 4.99062 10.1531C5.025 10.1937 5.03125 10.2406 5.00313 10.2625ZM4.79375 10.0312C4.78125 10.0594 4.74062 10.0656 4.70625 10.0437C4.66562 10.025 4.64687 9.99062 4.65937 9.9625C4.67188 9.94375 4.70625 9.93437 4.74688 9.95C4.7875 9.97188 4.80625 10.0063 4.79375 10.0312Z"
-                            fill="var(--primary-500)" />
-                    </svg>
-                <span>https://github.com/rojasadrian012</span></a>
-            <p class="links__item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
-                    <g clip-path="url(#clip0_1825_4351)">
-                        <path
-                            d="M6.74062 15.6C8.34375 13.5938 12 8.73125 12 6C12 2.6875 9.3125 0 6 0C2.6875 0 0 2.6875 0 6C0 8.73125 3.65625 13.5938 5.25938 15.6C5.64375 16.0781 6.35625 16.0781 6.74062 15.6ZM9.53125 4.53125L5.53125 8.53125C5.2375 8.825 4.7625 8.825 4.47188 8.53125L2.46875 6.53125C2.175 6.2375 2.175 5.7625 2.46875 5.47188C2.7625 5.18125 3.2375 5.17813 3.52813 5.47188L4.99687 6.94063L8.46875 3.46875C8.7625 3.175 9.2375 3.175 9.52812 3.46875C9.81875 3.7625 9.82187 4.2375 9.52812 4.52812L9.53125 4.53125Z"
-                            fill="var(--primary-500)" />
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_1825_4351">
-                            <rect width="12" height="16" fill="white" />
-                        </clipPath>
-                    </defs>
-                </svg>
-                    <span>Ciudad del Este, Paraguay</span>
-            </p>
-        </div>
-    </section>
+    </header>
+    <main class="container main">
+      <div class="column column-left"></div>
+      <div class="column column-right"></div>
+      
+      <section class="section links">
+          <h2 class="title">Mis enlaces</h2>
+          <div class="links__container">
+                  <a class="links__item" href=https://www.linkedin.com/in/adrian-portillo-52a963245/ target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path
+                              d="M14 1H1.99687C1.44687 1 1 1.45313 1 2.00938V13.9906C1 14.5469 1.44687 15 1.99687 15H14C14.55 15 15 14.5469 15 13.9906V2.00938C15 1.45313 14.55 1 14 1ZM5.23125 13H3.15625V6.31875H5.23438V13H5.23125ZM4.19375 5.40625C3.52812 5.40625 2.99063 4.86562 2.99063 4.20312C2.99063 3.54063 3.52812 3 4.19375 3C4.85625 3 5.39687 3.54063 5.39687 4.20312C5.39687 4.86875 4.85938 5.40625 4.19375 5.40625ZM13.0094 13H10.9344V9.75C10.9344 8.975 10.9187 7.97813 9.85625 7.97813C8.775 7.97813 8.60938 8.82188 8.60938 9.69375V13H6.53438V6.31875H8.525V7.23125H8.55312C8.83125 6.70625 9.50938 6.15312 10.5188 6.15312C12.6187 6.15312 13.0094 7.5375 13.0094 9.3375V13Z"
+                              fill="var(--primary-500)" />
+                      </svg>
+                  <span>https://www.linkedin.com/in/adrian-portillo-52a963245/</span></a>
+                  <a class="links__item" href=https://github.com/rojasadrian012 target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path
+                              d="M13.5 1H2.5C1.67188 1 1 1.67188 1 2.5V13.5C1 14.3281 1.67188 15 2.5 15H13.5C14.3281 15 15 14.3281 15 13.5V2.5C15 1.67188 14.3281 1 13.5 1ZM9.66562 12.9906C9.40312 13.0375 9.30625 12.875 9.30625 12.7406C9.30625 12.5719 9.3125 11.7094 9.3125 11.0125C9.3125 10.525 9.15 10.2156 8.95937 10.0531C10.1156 9.925 11.3344 9.76562 11.3344 7.76875C11.3344 7.2 11.1313 6.91563 10.8 6.55C10.8531 6.41563 11.0312 5.8625 10.7469 5.14375C10.3125 5.00938 9.31875 5.70312 9.31875 5.70312C8.90625 5.5875 8.45938 5.52812 8.01875 5.52812C7.57812 5.52812 7.13125 5.5875 6.71875 5.70312C6.71875 5.70312 5.725 5.00938 5.29063 5.14375C5.00625 5.85938 5.18125 6.4125 5.2375 6.55C4.90625 6.91563 4.75 7.2 4.75 7.76875C4.75 9.75625 5.91563 9.925 7.07188 10.0531C6.92188 10.1875 6.7875 10.4187 6.74062 10.75C6.44375 10.8844 5.68437 11.1156 5.23125 10.3156C4.94687 9.82188 4.43438 9.78125 4.43438 9.78125C3.92812 9.775 4.4 10.1 4.4 10.1C4.7375 10.2563 4.975 10.8562 4.975 10.8562C5.27812 11.7844 6.72813 11.4719 6.72813 11.4719C6.72813 11.9062 6.73438 12.6125 6.73438 12.7406C6.73438 12.875 6.64062 13.0375 6.375 12.9906C4.3125 12.3 2.86875 10.3375 2.86875 8.04375C2.86875 5.175 5.0625 2.99688 7.93125 2.99688C10.8 2.99688 13.125 5.175 13.125 8.04375C13.1281 10.3375 11.7281 12.3031 9.66562 12.9906ZM6.6 11.0813C6.54063 11.0938 6.48438 11.0687 6.47813 11.0281C6.47188 10.9812 6.5125 10.9406 6.57188 10.9281C6.63125 10.9219 6.6875 10.9469 6.69375 10.9875C6.70312 11.0281 6.6625 11.0688 6.6 11.0813ZM6.30312 11.0531C6.30312 11.0938 6.25625 11.1281 6.19375 11.1281C6.125 11.1344 6.07812 11.1 6.07812 11.0531C6.07812 11.0125 6.125 10.9781 6.1875 10.9781C6.24687 10.9719 6.30312 11.0063 6.30312 11.0531ZM5.875 11.0188C5.8625 11.0594 5.8 11.0781 5.74687 11.0594C5.6875 11.0469 5.64688 11 5.65938 10.9594C5.67188 10.9188 5.73438 10.9 5.7875 10.9125C5.85 10.9313 5.89062 10.9781 5.875 11.0188ZM5.49062 10.85C5.4625 10.8844 5.40312 10.8781 5.35625 10.8313C5.30937 10.7906 5.29688 10.7312 5.32812 10.7031C5.35625 10.6687 5.41563 10.675 5.4625 10.7219C5.50313 10.7625 5.51875 10.825 5.49062 10.85ZM5.20625 10.5656C5.17813 10.5844 5.125 10.5656 5.09062 10.5188C5.05625 10.4719 5.05625 10.4188 5.09062 10.3969C5.125 10.3688 5.17813 10.3906 5.20625 10.4375C5.24063 10.4844 5.24063 10.5406 5.20625 10.5656ZM5.00313 10.2625C4.975 10.2906 4.92812 10.275 4.89375 10.2437C4.85938 10.2031 4.85312 10.1562 4.88125 10.1344C4.90937 10.1062 4.95625 10.1219 4.99062 10.1531C5.025 10.1937 5.03125 10.2406 5.00313 10.2625ZM4.79375 10.0312C4.78125 10.0594 4.74062 10.0656 4.70625 10.0437C4.66562 10.025 4.64687 9.99062 4.65937 9.9625C4.67188 9.94375 4.70625 9.93437 4.74688 9.95C4.7875 9.97188 4.80625 10.0063 4.79375 10.0312Z"
+                              fill="var(--primary-500)" />
+                      </svg>
+                  <span>https://github.com/rojasadrian012</span></a>
+              <p class="links__item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
+                      <g clip-path="url(#clip0_1825_4351)">
+                          <path
+                              d="M6.74062 15.6C8.34375 13.5938 12 8.73125 12 6C12 2.6875 9.3125 0 6 0C2.6875 0 0 2.6875 0 6C0 8.73125 3.65625 13.5938 5.25938 15.6C5.64375 16.0781 6.35625 16.0781 6.74062 15.6ZM9.53125 4.53125L5.53125 8.53125C5.2375 8.825 4.7625 8.825 4.47188 8.53125L2.46875 6.53125C2.175 6.2375 2.175 5.7625 2.46875 5.47188C2.7625 5.18125 3.2375 5.17813 3.52813 5.47188L4.99687 6.94063L8.46875 3.46875C8.7625 3.175 9.2375 3.175 9.52812 3.46875C9.81875 3.7625 9.82187 4.2375 9.52812 4.52812L9.53125 4.53125Z"
+                              fill="var(--primary-500)" />
+                      </g>
+                      <defs>
+                          <clipPath id="clip0_1825_4351">
+                              <rect width="12" height="16" fill="white" />
+                          </clipPath>
+                      </defs>
+                  </svg>
+                      <span>Ciudad del Este, Paraguay</span>
+              </p>
+          </div>
+      </section>
 
-            <section class="section about">
-        <h2 class="title">Sobre mí</h2>
-        <p>Desarrollador Full Stack con 2 años de experiencia en proyectos web, combinando habilidades en frontend (React, Angular) y backend (.NET/SQL Server, Node.js/PostgreSQL). Licenciado en Análisis de Sistemas y actualmente cursando un máster en Frontend para fortalecer mis conocimientos en tecnologías avanzadas. Comprometido con el desarrollo de soluciones prácticas y efectivas, enfocadas en satisfacer los objetivos de cada proyecto.</p>
-    </section>
+      <section class="section about">
+          <h2 class="title">Sobre mí</h2>
+          <p>Desarrollador Full Stack con 2 años de experiencia en proyectos web, combinando habilidades en frontend (React, Angular) y backend (.NET/SQL Server, Node.js/PostgreSQL). Licenciado en Análisis de Sistemas y actualmente cursando un máster en Frontend para fortalecer mis conocimientos en tecnologías avanzadas. Comprometido con el desarrollo de soluciones prácticas y efectivas, enfocadas en satisfacer los objetivos de cada proyecto.</p>
+      </section>
 
-            <section class="section soft-skills">
-      <h2 class="title">Competencias</h2>
-      <ul class="soft-skills__list">
-          <li>Autonomía en el aprendizaje</li>
-          <li>Capacidad de recibir feedback</li>
-          <li>Pensamiento creativo</li>
-      </ul>
-    </section>
+      <section class="section soft-skills">
+        <h2 class="title">Competencias</h2>
+        <ul class="soft-skills__list">
+            <li>Autonomía en el aprendizaje</li>
+            <li>Capacidad de recibir feedback</li>
+            <li>Pensamiento creativo</li>
+        </ul>
+      </section>
 
-            <section class="section hard-skills">
+      <section class="section hard-skills">
         <h2 class="title">Habilidades</h2>
         <ul class="hard-skills__list">
                 <li class="chip chip-primary">.NET</li>
@@ -798,552 +863,619 @@
         </ul>
       </section>
 
-        <section class="section languages">
-    <h2 class="title">Idiomas</h2>
+      <section class="section languages">
+      <h2 class="title">Idiomas</h2>
 
-        <div class="language__container">
-          <p class="language__title">Inglés</p>
-          <figure type="language" class="language__image">
-            <div class="language__icon level-1"></div>
-            <figcaption class="language__caption">Básico</figcaption>
-          </figure>
-        </div>
-        <div class="language__container">
-          <p class="language__title">Español</p>
-          <figure type="language" class="language__image">
-            <div class="language__icon level-4"></div>
-            <figcaption class="language__caption">Nativo/Bilingüe</figcaption>
-          </figure>
-        </div>
-        <div class="language__container">
-          <p class="language__title">Portugués</p>
-          <figure type="language" class="language__image">
-            <div class="language__icon level-3"></div>
-            <figcaption class="language__caption">Fluido</figcaption>
-          </figure>
-        </div>
-</section>
+          <div class="language__container">
+            <p class="language__title">Inglés</p>
+            <figure type="language" class="language__image">
+              <div class="language__icon level-1"></div>
+              <figcaption class="language__caption">Básico</figcaption>
+            </figure>
+          </div>
+          <div class="language__container">
+            <p class="language__title">Español</p>
+            <figure type="language" class="language__image">
+              <div class="language__icon level-4"></div>
+              <figcaption class="language__caption">Nativo/Bilingüe</figcaption>
+            </figure>
+          </div>
+          <div class="language__container">
+            <p class="language__title">Portugués</p>
+            <figure type="language" class="language__image">
+              <div class="language__icon level-3"></div>
+              <figcaption class="language__caption">Fluido</figcaption>
+            </figure>
+          </div>
+      </section>
 
-        <section class="section experiencies">
-    <h2 class="title">Experiencia / Carrera</h2>
-    <div class="experiencies__container">
-      <div class="experience">
-        <p class="experience__date">
-          nov 2024
-             - Actualidad
-        <h3 class="experience__position">Desarrollador FullStack</h3>
-        <h4 class="experience__company">LemonCode</h4>
-        <div class="experience__text">
-          <p>Quickmock  es una herramienta de código abierto para la simulación de interfaces de usuario de baja fidelidad, creada con el objetivo de apoyar a la comunidad en sus proyectos:
-- Revisión y solución de issues en el repositorio, contribuyendo activamente al desarrollo de nuevas funcionalidades.
-- Implementación de características asignadas utilizando React, TypeScript y React Konva, integrando componentes interactivos basados en SVG.</p>
-        </div>
-        <a href=https://www.quickmock.net/ class="experience__url" target="_blank">https://www.quickmock.net/</a>
-        <div>
-          <h5 class="experience__tools">Tecnologías y Herramientas</h5>
-          <ul class="experience__tools-list">
-            <li class="chip">Github</li>
-            <li class="chip">React</li>
-            <li class="chip">TypeScript</li>
-          </ul>
-        </div>
-      </div>
-      <div class="experience">
-        <p class="experience__date">
-          abr 2024
-              - oct 2024        <h3 class="experience__position">Desarrollador FullStack</h3>
-        <h4 class="experience__company">GeoStory - Freelancer</h4>
-        <div class="experience__text">
-          <p>Aplicación interactiva para facilitar el aprendizaje de historia y geografía en estudiantes de sexto grado. Este proyecto gamificado incentiva a los usuarios mediante logros, tablas de clasificación y retroalimentación inmediata, creando una experiencia educativa motivadora. Las principales características del sistema incluyen:
-- Implementación de niveles temáticos que se desbloquean a medida que los estudiantes responden correctamente a preguntas de selección múltiple.
-- Desarrollo con NestJS y TypeScript para procesar respuestas, calcular puntuaciones y mantener un historial de progreso, utilizando PostgreSQL y TypeORM como base de datos.
-- Diseño de una interfaz atractiva y funcional utilizando Angular y componentes visuales animados integrados con Lottie.
-- Creación de tablas de clasificación dinámicas en tiempo real y desbloqueo de logros basadas en el rendimiento del usuario.</p>
-        </div>
-        <div>
-          <h5 class="experience__tools">Tecnologías y Herramientas</h5>
-          <ul class="experience__tools-list">
-            <li class="chip">Angular2+</li>
-            <li class="chip">Docker</li>
-            <li class="chip">Github</li>
-            <li class="chip">Nest</li>
-            <li class="chip">PostgreSQL</li>
-            <li class="chip">TypeORM</li>
-            <li class="chip">TypeScript</li>
-          </ul>
-        </div>
-      </div>
-      <div class="experience">
-        <p class="experience__date">
-          mar 2023
-              - mar 2024        <h3 class="experience__position">Desarrollador FullStack</h3>
-        <h4 class="experience__company">Farmacia Divina Misericordia  - Freelancer</h4>
-        <div class="experience__text">
-          <p>Sistema integral para la gestión de inventarios, ventas y reportes en pequeñas farmacias, utilizando Angular para el diseño de la interfaz de usuario y .Net Core en el backend. Este proyecto incluyó las siguientes funcionalidades destacadas:
-Implementación de un módulo para controlar productos en stock, registrar proveedores y administrar clientes, con persistencia de datos en SQL Server mediante Entity Framework y consultas optimizadas con LINQ.
-Desarrollo de un proceso para generar informes mensuales requeridos por organismos de control (SENAD), escribiendo automáticamente en archivos Excel mediante DotNetCore.NPOI, garantizando la precisión y el cumplimiento de normativas regulatorias.
- Implementación de un sistema para generar tickets y reportes detallados en formato PDF usando PdfMake, integrados en un flujo accesible desde el panel de control.
-Diseño de panel de control interactivo y funcional en Angular, diseñado para optimizar la experiencia del usuario con acceso rápido a opciones y atajos para operaciones frecuentes.</p>
-        </div>
-        <div>
-          <h5 class="experience__tools">Tecnologías y Herramientas</h5>
-          <ul class="experience__tools-list">
-            <li class="chip">.NET</li>
-            <li class="chip">Angular2+</li>
-            <li class="chip">LinQ</li>
-            <li class="chip">SQLServer</li>
-          </ul>
-        </div>
-      </div>
-      <div class="experience">
-        <p class="experience__date">
-          oct 2022
-              - feb 2023        <h3 class="experience__position">Desarrollador FullStack </h3>
-        <h4 class="experience__company">Moura Sistemas de Gestão</h4>
-        <div class="experience__text">
-          <p>Participé en el desarrollo de módulos para la gestión empresarial, abordando tareas tanto en el backend como en el frontend. Algunas de las principales responsabilidades incluyeron:
-- Diseño e implementación de pantallas de búsqueda y ajustes en interfaces existentes utilizando Angular.
-- Desarrollo de lógica y funcionalidades en el backend con Visual Basic, integrando servicios para consumo desde el frontend.
-- Resolución de bugs y optimización de procesos en aplicaciones empresariales.
-- Generación de reportes en Excel mediante bibliotecas específicas para exportación de datos.
-- Uso de herramientas como GitLab para el control de versiones y Swagger para documentar y probar APIs.
-- Colaboración dentro de equipos ágiles bajo la metodología Scrum.</p>
-        </div>
-        <a href=https://www.jnmoura.com.br/ class="experience__url" target="_blank">https://www.jnmoura.com.br/</a>
-        <div>
-          <h5 class="experience__tools">Tecnologías y Herramientas</h5>
-          <ul class="experience__tools-list">
-            <li class="chip">ASP.net</li>
-            <li class="chip">Angular2+</li>
-            <li class="chip">C#</li>
-            <li class="chip">GitLab</li>
-            <li class="chip">Visual Basic</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      <section class="section experiencies">
+        <h2 class="title">Experiencia / Carrera</h2>
+        <div class="experiencies__container">
+          <div class="experience">
+            <p class="experience__date">
+              nov 2024 - Actualidad
+            <h3 class="experience__position">Desarrollador FullStack</h3>
+            <h4 class="experience__company">LemonCode</h4>
+            <div class="experience__text">
+              <p>
+                Quickmock  es una herramienta de código abierto para la simulación de 
+                interfaces de usuario de baja fidelidad, creada con el objetivo de apoyar 
+                a la comunidad en sus proyectos:
+                <p>
+                  - Revisión y solución de issues en el repositorio, contribuyendo activamente 
+                  al desarrollo de nuevas funcionalidades.
+                </p>
+                <p>
+                  - Implementación de características asignadas utilizando React, TypeScript 
+                  y React Konva, integrando componentes interactivos basados en SVG.
+                </p>
+              </p>
+            </div>
 
-          <section class="section educations">
-    <h2 class="title">Estudios</h2>
-        <div class="education">
-          <div class="decoration">
-            <div class="decoration__circle"></div>
-            <hr class="decoration__line" />
-          </div>
-          <div class="education__group">
-            <p class="education__date">dic 2024 - Actualidad            </p>
-            <p class="education__title">Bootcamp JavaScript + TypeScript online</p>
-            <p class="education__entity">Lemoncode</p>
-            <p class="education__technologies">
-            
-              
-                CSS <span> | </span>
-              
-            
-              
-                HTML <span> | </span>
-              
-            
-              
-                JavaScript <span> | </span>
-              
-            
-              
-                React <span> | </span>
-              
-            
-              
-                Typeform
-              
-            
-            </p>
-          </div>
-        </div>
-        <div class="education">
-          <div class="decoration">
-            <div class="decoration__circle"></div>
-            <hr class="decoration__line" />
-          </div>
-          <div class="education__group">
-            <p class="education__date">ago 2024 - Actualidad            </p>
-            <p class="education__title">Máster Front End</p>
-            <p class="education__entity">Lemoncode</p>
-            <p class="education__technologies">
-            
-              
-                Angular2+ <span> | </span>
-              
-            
-              
-                Astro <span> | </span>
-              
-            
-              
-                CSS <span> | </span>
-              
-            
-              
-                Cypress <span> | </span>
-              
-            
-              
-                Docker <span> | </span>
-              
-            
-              
-                GraphQL <span> | </span>
-              
-            
-              
-                HTML <span> | </span>
-              
-            
-              
-                JavaScript <span> | </span>
-              
-            
-              
-                Jest <span> | </span>
-              
-            
-              
-                NextJS <span> | </span>
-              
-            
-              
-                Playwright <span> | </span>
-              
-            
-              
-                React <span> | </span>
-              
-            
-              
-                React Native <span> | </span>
-              
-            
-              
-                RxJava <span> | </span>
-              
-            
-              
-                SaaS <span> | </span>
-              
-            
-              
-                Svelte <span> | </span>
-              
-            
-              
-                Tailwind <span> | </span>
-              
-            
-              
-                TypeScript <span> | </span>
-              
-            
-              
-                Vite <span> | </span>
-              
-            
-              
-                Vue <span> | </span>
-              
-            
-              
-                WebComponents <span> | </span>
-              
-            
-              
-                WebSockets <span> | </span>
-              
-            
-              
-                Webpack
-              
-            
-            </p>
-          </div>
-        </div>
-        <div class="education">
-          <div class="decoration">
-            <div class="decoration__circle"></div>
-            <hr class="decoration__line" />
-          </div>
-          <div class="education__group">
-            <p class="education__date">feb 2024              - abr 2024            </p>
-            <p class="education__title">Nest: Desarrollo backend escalable con Node</p>
-            <p class="education__entity">DevTalles</p>
-            <p class="education__technologies">
-            
-              
-                Docker <span> | </span>
-              
-            
-              
-                NoSQL <span> | </span>
-              
-            
-              
-                Passport <span> | </span>
-              
-            
-              
-                PostgreSQL <span> | </span>
-              
-            
-              
-                TypeScript <span> | </span>
-              
-            
-              
-                nestJS
-              
-            
-            </p>
-          </div>
-        </div>
-        <div class="education">
-          <div class="decoration">
-            <div class="decoration__circle"></div>
-            <hr class="decoration__line" />
-          </div>
-          <div class="education__group">
-            <p class="education__date">jun 2022              - oct 2022            </p>
-            <p class="education__title">Curso de Tecnologías Frontend y Backend</p>
-            <p class="education__entity">Moura Sistemas de Gestao</p>
-            <p class="education__technologies">
-            
-              
-                .NET <span> | </span>
-              
-            
-              
-                Angular2+ <span> | </span>
-              
-            
-              
-                CSS <span> | </span>
-              
-            
-              
-                Github <span> | </span>
-              
-            
-              
-                HTML <span> | </span>
-              
-            
-              
-                JavaScript <span> | </span>
-              
-            
-              
-                SQLServer <span> | </span>
-              
-            
-              
-                TypeScript
-              
-            
-            </p>
-          </div>
-        </div>
-        <div class="education">
-          <div class="decoration">
-            <div class="decoration__circle"></div>
-            <hr class="decoration__line" />
-          </div>
-          <div class="education__group">
-            <p class="education__date">may 2018              - oct 2024            </p>
-            <p class="education__title">Licenciado en Análisis de Sistemas</p>
-            <p class="education__entity">Universidad Nacional del Este - Facultad Politécnica</p>
-            <p class="education__technologies">
-            
-              
-                .NET <span> | </span>
-              
-            
-              
-                .Net Core <span> | </span>
-              
-            
-              
-                AJAX <span> | </span>
-              
-            
-              
-                ASP.net <span> | </span>
-              
-            
-              
-                Angular2+ <span> | </span>
-              
-            
-              
-                Apache Tomcat <span> | </span>
-              
-            
-              
-                Bootstrap <span> | </span>
-              
-            
-              
-                C <span> | </span>
-              
-            
-              
-                C# <span> | </span>
-              
-            
-              
-                C++ <span> | </span>
-              
-            
-              
-                CSS <span> | </span>
-              
-            
-              
-                Github <span> | </span>
-              
-            
-              
-                HTML <span> | </span>
-              
-            
-              
-                Ionic <span> | </span>
-              
-            
-              
-                JSF <span> | </span>
-              
-            
-              
-                JSP <span> | </span>
-              
-            
-              
-                Java <span> | </span>
-              
-            
-              
-                JavaScript <span> | </span>
-              
-            
-              
-                Linux <span> | </span>
-              
-            
-              
-                MySQL <span> | </span>
-              
-            
-              
-                NodeJS <span> | </span>
-              
-            
-              
-                PHPMyAdmin <span> | </span>
-              
-            
-              
-                PostgreSQL <span> | </span>
-              
-            
-              
-                Postman <span> | </span>
-              
-            
-              
-                Primefaces <span> | </span>
-              
-            
-              
-                Sequelize <span> | </span>
-              
-            
-              
-                TypeORM <span> | </span>
-              
-            
-              
-                TypeScript
-              
-            
-            </p>
-          </div>
-        </div>
-    </section>
+            <div class="carousel-container">
+              <div class="carousel">
+                <img id="qm-carousel" src="assets/qm-home.webp" alt="GeoStory Home">
+              </div>
+            </div>            
 
-      </main>
-      <footer class="footer"></footer>
+            <a href=https://www.quickmock.net/ class="experience__url" target="_blank">https://www.quickmock.net/</a>
+            
+            <div>
+              <h5 class="experience__tools">Tecnologías y Herramientas</h5>
+              <ul class="experience__tools-list">
+                <li class="chip">Github</li>
+                <li class="chip">React</li>
+                <li class="chip">TypeScript</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience">
+            <p class="experience__date">
+              abr 2024 - oct 2024        
+            <h3 class="experience__position">Desarrollador FullStack</h3>
+            <h4 class="experience__company">GeoStory - Freelancer</h4>
+            <div class="experience__text">
+              <p>Aplicación interactiva para facilitar el aprendizaje de historia y geografía en estudiantes de sexto grado. Este proyecto gamificado incentiva a los usuarios mediante logros, tablas de clasificación y retroalimentación inmediata, creando una experiencia educativa motivadora. Las principales características del sistema incluyen:
+      - Implementación de niveles temáticos que se desbloquean a medida que los estudiantes responden correctamente a preguntas de selección múltiple.
+      - Desarrollo con NestJS y TypeScript para procesar respuestas, calcular puntuaciones y mantener un historial de progreso, utilizando PostgreSQL y TypeORM como base de datos.
+      - Diseño de una interfaz atractiva y funcional utilizando Angular y componentes visuales animados integrados con Lottie.
+                - Creación de tablas de clasificación dinámicas en tiempo real y desbloqueo de logros basadas en el rendimiento del usuario.</p>
+            </div>
+            <div>
+              <div class="carousel-container">
+                <div class="carousel">
+                  <button class="prev" onclick="prevImage('gs')">&#10094;</button>
+                  <img id="gs-carousel" src="assets/gs-home.webp" alt="GeoStory Home">
+                  <button class="next" onclick="nextImage('gs')">&#10095;</button>
+                </div>
+              </div>
+              <h5 class="experience__tools">Tecnologías y Herramientas</h5>
+              <ul class="experience__tools-list">
+                <li class="chip">Angular2+</li>
+                <li class="chip">Docker</li>
+                <li class="chip">Github</li>
+                <li class="chip">Nest</li>
+                <li class="chip">PostgreSQL</li>
+                <li class="chip">TypeORM</li>
+                <li class="chip">TypeScript</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience">
+            <p class="experience__date">
+              mar 2023
+                  - mar 2024        <h3 class="experience__position">Desarrollador FullStack</h3>
+            <h4 class="experience__company">Farmacia Divina Misericordia  - Freelancer</h4>
+            <div class="experience__text">
+              <p>Sistema integral para la gestión de inventarios, ventas y reportes en pequeñas farmacias, utilizando Angular para el diseño de la interfaz de usuario y .Net Core en el backend. Este proyecto incluyó las siguientes funcionalidades destacadas:
+      Implementación de un módulo para controlar productos en stock, registrar proveedores y administrar clientes, con persistencia de datos en SQL Server mediante Entity Framework y consultas optimizadas con LINQ.
+      Desarrollo de un proceso para generar informes mensuales requeridos por organismos de control (SENAD), escribiendo automáticamente en archivos Excel mediante DotNetCore.NPOI, garantizando la precisión y el cumplimiento de normativas regulatorias.
+      Implementación de un sistema para generar tickets y reportes detallados en formato PDF usando PdfMake, integrados en un flujo accesible desde el panel de control.
+      Diseño de panel de control interactivo y funcional en Angular, diseñado para optimizar la experiencia del usuario con acceso rápido a opciones y atajos para operaciones frecuentes.</p>
+            </div>
+            <div>
+              <div class="carousel-container">
+                <div class="carousel">
+                  <button class="prev" onclick="prevImage('dm')">&#10094;</button>
+                  <img id="dm-carousel" src="assets/dm-home.webp" alt="GeoStory Home">
+                  <button class="next" onclick="nextImage('dm')">&#10095;</button>
+                </div>
+              </div>
+              <h5 class="experience__tools">Tecnologías y Herramientas</h5>
+              <ul class="experience__tools-list">
+                <li class="chip">.NET</li>
+                <li class="chip">Angular2+</li>
+                <li class="chip">LinQ</li>
+                <li class="chip">SQLServer</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience">
+            <p class="experience__date">
+              oct 2022
+                  - feb 2023        <h3 class="experience__position">Desarrollador FullStack </h3>
+            <h4 class="experience__company">Moura Sistemas de Gestão</h4>
+            <div class="experience__text">
+              <p>Participé en el desarrollo de módulos para la gestión empresarial, abordando tareas tanto en el backend como en el frontend. Algunas de las principales responsabilidades incluyeron:
+      - Diseño e implementación de pantallas de búsqueda y ajustes en interfaces existentes utilizando Angular.
+      - Desarrollo de lógica y funcionalidades en el backend con Visual Basic, integrando servicios para consumo desde el frontend.
+      - Resolución de bugs y optimización de procesos en aplicaciones empresariales.
+      - Generación de reportes en Excel mediante bibliotecas específicas para exportación de datos.
+      - Uso de herramientas como GitLab para el control de versiones y Swagger para documentar y probar APIs.
+      - Colaboración dentro de equipos ágiles bajo la metodología Scrum.</p>
+            </div>
+            <a href=https://www.jnmoura.com.br/ class="experience__url" target="_blank">https://www.jnmoura.com.br/</a>
+            <div>
+              <h5 class="experience__tools">Tecnologías y Herramientas</h5>
+              <ul class="experience__tools-list">
+                <li class="chip">ASP.net</li>
+                <li class="chip">Angular2+</li>
+                <li class="chip">C#</li>
+                <li class="chip">GitLab</li>
+                <li class="chip">Visual Basic</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section educations">
+      <h2 class="title">Estudios</h2>
+          <div class="education">
+            <div class="decoration">
+              <div class="decoration__circle"></div>
+              <hr class="decoration__line" />
+            </div>
+            <div class="education__group">
+              <p class="education__date">ago 2024              - dic 2024            </p>
+              <p class="education__title">Bootcamp JavaScript + TypeScript online</p>
+              <p class="education__entity">Lemoncode</p>
+              <p class="education__technologies">
+              
+                
+                  CSS <span> | </span>
+                
+              
+                
+                  HTML <span> | </span>
+                
+              
+                
+                  JavaScript <span> | </span>
+                
+              
+                
+                  React <span> | </span>
+                
+              
+                
+                  Typeform
+                
+              
+              </p>
+            </div>
+          </div>
+          <div class="education">
+            <div class="decoration">
+              <div class="decoration__circle"></div>
+              <hr class="decoration__line" />
+            </div>
+            <div class="education__group">
+              <p class="education__date">ago 2024 - Actualidad            </p>
+              <p class="education__title">Máster Front End</p>
+              <p class="education__entity">Lemoncode</p>
+              <p class="education__technologies">
+              
+                
+                  Angular2+ <span> | </span>
+                
+              
+                
+                  Astro <span> | </span>
+                
+              
+                
+                  CSS <span> | </span>
+                
+              
+                
+                  Cypress <span> | </span>
+                
+              
+                
+                  Docker <span> | </span>
+                
+              
+                
+                  GraphQL <span> | </span>
+                
+              
+                
+                  HTML <span> | </span>
+                
+              
+                
+                  JavaScript <span> | </span>
+                
+              
+                
+                  Jest <span> | </span>
+                
+              
+                
+                  NextJS <span> | </span>
+                
+              
+                
+                  Playwright <span> | </span>
+                
+              
+                
+                  React <span> | </span>
+                
+              
+                
+                  React Native <span> | </span>
+                
+              
+                
+                  RxJava <span> | </span>
+                
+              
+                
+                  SaaS <span> | </span>
+                
+              
+                
+                  Svelte <span> | </span>
+                
+              
+                
+                  Tailwind <span> | </span>
+                
+              
+                
+                  TypeScript <span> | </span>
+                
+              
+                
+                  Vite <span> | </span>
+                
+              
+                
+                  Vue <span> | </span>
+                
+              
+                
+                  WebComponents <span> | </span>
+                
+              
+                
+                  WebSockets <span> | </span>
+                
+              
+                
+                  Webpack
+                
+              
+              </p>
+            </div>
+          </div>
+          <div class="education">
+            <div class="decoration">
+              <div class="decoration__circle"></div>
+              <hr class="decoration__line" />
+            </div>
+            <div class="education__group">
+              <p class="education__date">feb 2024              - abr 2024            </p>
+              <p class="education__title">Nest: Desarrollo backend escalable con Node</p>
+              <p class="education__entity">DevTalles</p>
+              <p class="education__technologies">
+              
+                
+                  Docker <span> | </span>
+                
+              
+                
+                  NoSQL <span> | </span>
+                
+              
+                
+                  Passport <span> | </span>
+                
+              
+                
+                  PostgreSQL <span> | </span>
+                
+              
+                
+                  TypeScript <span> | </span>
+                
+              
+                
+                  nestJS
+                
+              
+              </p>
+            </div>
+          </div>
+          <div class="education">
+            <div class="decoration">
+              <div class="decoration__circle"></div>
+              <hr class="decoration__line" />
+            </div>
+            <div class="education__group">
+              <p class="education__date">jun 2022              - oct 2022            </p>
+              <p class="education__title">Curso de Tecnologías Frontend y Backend</p>
+              <p class="education__entity">Moura Sistemas de Gestao</p>
+              <p class="education__technologies">
+              
+                
+                  .NET <span> | </span>
+                
+              
+                
+                  Angular2+ <span> | </span>
+                
+              
+                
+                  CSS <span> | </span>
+                
+              
+                
+                  Github <span> | </span>
+                
+              
+                
+                  HTML <span> | </span>
+                
+              
+                
+                  JavaScript <span> | </span>
+                
+              
+                
+                  SQLServer <span> | </span>
+                
+              
+                
+                  TypeScript
+                
+              
+              </p>
+            </div>
+          </div>
+          <div class="education">
+            <div class="decoration">
+              <div class="decoration__circle"></div>
+              <hr class="decoration__line" />
+            </div>
+            <div class="education__group">
+              <p class="education__date">may 2018              - oct 2024            </p>
+              <p class="education__title">Licenciado en Análisis de Sistemas</p>
+              <p class="education__entity">Universidad Nacional del Este - Facultad Politécnica</p>
+              <p class="education__technologies">
+              
+                
+                  .NET <span> | </span>
+                
+              
+                
+                  .Net Core <span> | </span>
+                
+              
+                
+                  AJAX <span> | </span>
+                
+              
+                
+                  ASP.net <span> | </span>
+                
+              
+                
+                  Angular2+ <span> | </span>
+                
+              
+                
+                  Apache Tomcat <span> | </span>
+                
+              
+                
+                  Bootstrap <span> | </span>
+                
+              
+                
+                  C <span> | </span>
+                
+              
+                
+                  C# <span> | </span>
+                
+              
+                
+                  C++ <span> | </span>
+                
+              
+                
+                  CSS <span> | </span>
+                
+              
+                
+                  Github <span> | </span>
+                
+              
+                
+                  HTML <span> | </span>
+                
+              
+                
+                  Ionic <span> | </span>
+                
+              
+                
+                  JSF <span> | </span>
+                
+              
+                
+                  JSP <span> | </span>
+                
+              
+                
+                  Java <span> | </span>
+                
+              
+                
+                  JavaScript <span> | </span>
+                
+              
+                
+                  Linux <span> | </span>
+                
+              
+                
+                  MySQL <span> | </span>
+                
+              
+                
+                  NodeJS <span> | </span>
+                
+              
+                
+                  PHPMyAdmin <span> | </span>
+                
+              
+                
+                  PostgreSQL <span> | </span>
+                
+              
+                
+                  Postman <span> | </span>
+                
+              
+                
+                  Primefaces <span> | </span>
+                
+              
+                
+                  Sequelize <span> | </span>
+                
+              
+                
+                  TypeORM <span> | </span>
+                
+              
+                
+                  TypeScript
+                
+              
+              </p>
+            </div>
+          </div>
+      </section>
+
+    </main>
+    <footer class="footer"></footer>
     <script>
-  const elementInDOM = selector => document.querySelector(selector);
+      const elementInDOM = selector => document.querySelector(selector);
 
-  const elementReady = selector => {
-    const element = elementInDOM(selector);
-    if (element && element instanceof HTMLElement) {
-      return element;
-    }
-    console.log(new Error(`Element with id ${selector} not found in DOM`));
-    return null;
+      const elementReady = selector => {
+        const element = elementInDOM(selector);
+        if (element && element instanceof HTMLElement) {
+          return element;
+        }
+        console.log(new Error(`Element with id ${selector} not found in DOM`));
+        return null;
+      };
+
+      // media query event handler (mobile)
+      function handleResize() {
+        const main = elementInDOM('.main');
+        const aboutMe = elementInDOM('.about');
+        const experience = elementInDOM('.experiencies');
+        const myLinks = elementInDOM('.links');
+        const languages = elementInDOM('.languages');
+        const hardSkills = elementInDOM('.hard-skills');
+        const softSkills = elementInDOM('.soft-skills');
+        const education = elementInDOM('.educations');
+        const avatar = elementInDOM('.header__avatar');
+        const background = elementInDOM('.background');
+        const footer = elementInDOM('.footer');
+
+        const columnLeft = elementInDOM('.column-left');
+        const columnRight = elementInDOM('.column-right');
+
+        if (window.innerWidth > 834) {
+          aboutMe && columnLeft.appendChild(aboutMe);
+          experience && columnLeft.appendChild(experience);
+          myLinks && columnRight.appendChild(myLinks);
+          languages && columnRight.appendChild(languages);
+          hardSkills && columnRight.appendChild(hardSkills);
+          softSkills && columnRight.appendChild(softSkills);
+          education && columnRight.appendChild(education);
+
+          if (columnLeft.children.length === 0) {
+                columnLeft.style.display = 'none';
+          }
+
+          if (avatar) {
+            background.classList.add('background--image');
+            footer.classList.add('footer--image');
+          } else {
+            background.classList.remove('background--image');
+          }
+        } else {
+          myLinks && main.appendChild(myLinks);
+          aboutMe && main.appendChild(aboutMe);
+          hardSkills && main.appendChild(hardSkills);
+          softSkills && main.appendChild(softSkills);
+          languages && main.appendChild(languages);
+          experience && main.appendChild(experience);
+          education && main.appendChild(education);
+        }
+      }
+
+      window.addEventListener('resize', handleResize);
+
+      document.addEventListener('DOMContentLoaded', handleResize);
+
+        // Definir imágenes agrupadas por prefijo
+  const projectImages = {
+    gs: [
+      "assets/gs-home.webp",
+      "assets/gs-achievement.webp",
+      "assets/gs-next-level.webp",
+      "assets/gs-ranking.webp",
+      "assets/gs-reponse.webp"
+    ],
+    dm: [
+      "assets/dm-home.webp",
+      "assets/dm-excel.webp",
+      "assets/dm-montly-excel.webp",
+      "assets/dm-sell.webp"
+    ],
+    qm: [
+      "assets/qm-home.webp"
+    ]
   };
 
-  // media query event handler (mobile)
-  function handleResize() {
-    const main = elementInDOM('.main');
-    const aboutMe = elementInDOM('.about');
-    const experience = elementInDOM('.experiencies');
-    const myLinks = elementInDOM('.links');
-    const languages = elementInDOM('.languages');
-    const hardSkills = elementInDOM('.hard-skills');
-    const softSkills = elementInDOM('.soft-skills');
-    const education = elementInDOM('.educations');
-    const avatar = elementInDOM('.header__avatar');
-    const background = elementInDOM('.background');
-    const footer = elementInDOM('.footer');
+  // Índices actuales por categoría de imagen
+  let currentIndexes = {
+    gs: 0,
+    dm: 0,
+    qm: 0
+  };
 
-    const columnLeft = elementInDOM('.column-left');
-    const columnRight = elementInDOM('.column-right');
-
-    if (window.innerWidth > 834) {
-      aboutMe && columnLeft.appendChild(aboutMe);
-      experience && columnLeft.appendChild(experience);
-      myLinks && columnRight.appendChild(myLinks);
-      languages && columnRight.appendChild(languages);
-      hardSkills && columnRight.appendChild(hardSkills);
-      softSkills && columnRight.appendChild(softSkills);
-      education && columnRight.appendChild(education);
-
-      if (columnLeft.children.length === 0) {
-            columnLeft.style.display = 'none';
-      }
-
-      if (avatar) {
-        background.classList.add('background--image');
-        footer.classList.add('footer--image');
-      } else {
-        background.classList.remove('background--image');
-      }
-    } else {
-      myLinks && main.appendChild(myLinks);
-      aboutMe && main.appendChild(aboutMe);
-      hardSkills && main.appendChild(hardSkills);
-      softSkills && main.appendChild(softSkills);
-      languages && main.appendChild(languages);
-      experience && main.appendChild(experience);
-      education && main.appendChild(education);
-    }
+  function nextImage(project) {
+    currentIndexes[project] = (currentIndexes[project] + 1) % projectImages[project].length;
+    document.getElementById(`${project}-carousel`).src = projectImages[project][currentIndexes[project]];
   }
 
-  window.addEventListener('resize', handleResize);
+  function prevImage(project) {
+    currentIndexes[project] = (currentIndexes[project] - 1 + projectImages[project].length) % projectImages[project].length;
+    document.getElementById(`${project}-carousel`).src = projectImages[project][currentIndexes[project]];
+  }
 
-  document.addEventListener('DOMContentLoaded', handleResize);
-</script>
-</body>
+    </script>
+  </body>
 </html>
-
-  
